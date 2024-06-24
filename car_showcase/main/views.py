@@ -4,6 +4,7 @@ from django.shortcuts import render
 import requests
 import json
 from bs4 import BeautifulSoup
+from . import google_image_scraper
 # Create your views here.
 
 def showCars(request):
@@ -14,13 +15,11 @@ def showCars(request):
     response = requests.get(api_url, headers={'X-Api-Key': 'jFQIehzE63CSUj5jaggNLg==AiW7XrkI3zZvIsI6'})
     data = response.json()[page]
 
-    word = "audi"
-    url = 'https://www.google.com/search?q=audi&tbm=isch'
-    content = requests.get(url).content
-    soup = BeautifulSoup(content, 'lxml')
-    image = soup.find('img',{"class": "YQ4gaf"})
-    src = image.get('src')
-    dict_image = {'image_src': src }
+
+    query = data['model']
+    src = google_image_scraper.get_image_url(query)
+    dict_image = src
+    print(src)
     data.update(dict_image)
 
 

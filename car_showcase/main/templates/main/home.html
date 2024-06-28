@@ -1,21 +1,33 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'main/home.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Refresh for a new audi car</h1>
-    <h1>Make : {{make}}</h1>
-    <h1>Year : {{year}}</h1>
-    <h1>Model: {{model}}</h1>
+    <h1 class="websiteTitle">Random Yugioh Car Card Generator</h1>
+    <p class="websiteDescription">Refresh to get a new card</p>
 
-    {% for source in src %}
-        <img src = '{{source}}' width=200 height=200/>
-    {% endfor %}
+
+    <div class="cardContainer">
+       <img class="cardTemplate" src="https://i.ibb.co/mG6jvpR/monster-normal.png">
+      <div class="cardHole">
+        <img class="mainImage" src = '{{src}}'  onerror="this.onerror=null; this.remove();" width=200 height=200/>
+        </div>
+
+        <h1 class="model">{{model}}</h1>
+        <img class="starLevel" src="https://i.ibb.co/M1bYC6V/star.png">
+        <img class="cardType" src="https://i.ibb.co/nPXKRzG/wind.png">
+        <h4 class="carType">[{{class}}]</h4>
+        <div class="description">
+          Cool Car
+        </div>
+        <p class="monsterAtk">1200</p>
+        <p class="monsterDef">700</p>
+    </div>
 </body>
 </html>

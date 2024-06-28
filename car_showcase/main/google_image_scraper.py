@@ -6,18 +6,16 @@ import re
 
 
 def get_image_url(query):
-    formats = ['jpeg','png','gif','img']
+
     API = 'AIzaSyDPqCUReJ4p83bxxxQBvRZitNA_vbHL9Bs'
     searchEngineID = 'c6fb1df3b10dd4278'
     url = 'https://www.googleapis.com/customsearch/v1?key=' + API + '&cx=' + searchEngineID + '&q=' + query +'&searchType=image&fileType=jpeg'
-    result = []
+
     response = requests.get(url)
-    urls = Find(response.text)
-    for url in urls:
-        for format in formats:
-            if format in url:
-                result.append(url)
-    return result
+    json = response.json()
+    links = [item['link'] for item in json['items']]
+    print(response.text)
+    return links[0]
 
 def Find(string):
     # findall() has been used

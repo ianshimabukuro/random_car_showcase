@@ -10,7 +10,7 @@ from . import google_image_scraper
 def showCars(request):
 
     page = random.randint(0,49)
-    make = "toyota"
+    make = "honda"
     api_url = 'https://api.api-ninjas.com/v1/cars?limit=50&make={}'.format(make)
     response = requests.get(api_url, headers={'X-Api-Key': 'jFQIehzE63CSUj5jaggNLg==AiW7XrkI3zZvIsI6'})
     data = response.json()[page]

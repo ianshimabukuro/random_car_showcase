@@ -1,75 +1,106 @@
-/* style.css */
-
-/* Basic reset to remove default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+  background-image:url("https://s100.iracing.com/wp-content/uploads/2018/12/iRacing-Motorsport-Simulator-Screenshot-2018.11.28-11.02.29.70.png");
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #eaeaea; /* Light gray background */
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
+.websiteTitle{
+    text-align : center;
+
+}
+.websiteDescription{
+    text-align : center;
 }
 
-/* Styling the main heading */
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #444;
+
+
+.cardContainer {
+    position: relative; /* Ensure the container acts as a positioning context */  height: 515px;
+    width: 350px; /* Adjust width as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+
 }
 
-/* Styling the car details */
-h1:nth-child(2), h1:nth-child(3), h1:nth-child(4) {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.cardTemplate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    z-index: -1; /* Send the image behind other content */
 }
 
-/* Centering the content */
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+.cardHole{
+  position : absolute;
+  top: 17%;
+  left:10%;
+  width: 290px; /* adjust to container size as needed */
+  height: 290px; /* adjust to container size as needed */
+  border: 1px solid #ccc;
+
+}
+.cardHole img{
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-/* Styling the images */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+.cardContainer .model{
+    position :  absolute;
+    top : 0%;
+    left:6%;
+    width: 400px;
+    height: auto;
+
+}
+.cardContainer .starLevel {
+    position :  absolute;
+    top : 12.5%;
+    left: 83%;
+    width: 20px;
+    height: auto;
 }
 
-.gallery img {
-    border-radius: 10px;
-    transition: transform 0.2s ease-in-out;
-    width: 200px;
-    height: 200px;
+.cardContainer .cardType {
+    position :  absolute;
+    top : 5.5%;
+    left: 86%;
+    width: 25px;
+    height: auto;
+}
+.cardContainer .carType {
+    position :  absolute;
+    top : 70.8%;
+    left: 8.2%;
+    width: 400px;
+    height: auto;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
+.cardContainer .monsterDef {
+    position :  absolute;
+    top : 88%;
+    left: 84%;
+    width: 25px;
+    height: auto;
+}
+.cardContainer .monsterAtk {
+    position :  absolute;
+    top : 88%;
+    left: 63%;
+    width: 25px;
+    height: auto;
 }
 
-/* Making the website responsive */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.2rem;
-    }
-
-    .gallery img {
-        width: 100%;
-        height: auto;
-    }
+.cardContainer .description {
+    position :  absolute;
+    top : 78%;
+    left: 8.2%;
+    font-size: 0.8em;
+    width: 50px;
+    height: auto;
 }
+
